@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    min-height: 100vh;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-family: sans-serif;
+}
+ 
+.clock-base
+{
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 2.5rem 5rem;
+     /* box-shadow: 0 20px 60px rgba(245, 245, 245, 0.5); */
+     
+    backdrop-filter: blur(10px);
+    
+}
+
+.clock-base:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-45deg, #ff3d00 0%, #0400ff 100% );
+    transform: translate3d(0px, 0px, 0) scale(0.95);
+    filter: blur(50px);
+    opacity: var(0.7);
+    transition: opacity 0.3s;
+    border-radius: inherit;
+}
+
+.clock-base::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+        
+
+.clock{
+    font-size: 7rem;
+    font-weight: 700;
+    letter-spacing: 10px;
+    
+    color: rgb(255, 255, 255);
+}
+.date{
+    color: rgb(169, 169, 169);
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@media (max-width:900px) {
+    body{
+        gap: 30px;
+    }
+    .clock-base{
+         padding: 2.3rem 4rem;
+          box-shadow: 0 20px 30px rgba(245, 245, 245, 0.5);
+    backdrop-filter: blur(10px);
+    }
+    .clock{
+        font-size: 4rem;
+    }
+    .date{
+        font-size: 1.5rem;
+    }
+}
+@media (max-width:600px) {
+    body{
+        gap: 18px;
+    }
+    .clock-base{
+         padding: 1.4rem 2rem;
+          box-shadow: 0 8px 20px rgba(245, 245, 245, 0.5);
+    backdrop-filter: blur(10px);
+   
+    }
+    .clock{
+        font-size: 1.5rem;
+    }
+    .date{
+        font-size: 1rem;
+    }
+}
