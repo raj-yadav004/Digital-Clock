@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
 
 }
-body{
+
+body {
     min-height: 100vh;
     background-color: rgb(28, 28, 28);
     display: flex;
@@ -11,18 +12,18 @@ body{
     justify-content: center;
     align-items: center;
     gap: 50px;
-    font-family: "Ubuntu",sans-serif;
+    font-family: "Ubuntu", sans-serif;
 }
- 
-.clock-base
-{
+
+.clock-base {
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     padding: 2.5rem 5rem;
-     /* box-shadow: 0 20px 60px rgba(245, 245, 245, 0.5); */
-     
-    backdrop-filter: blur(10px);
     
+   
+    -webkit-backdrop-filter: blur(10px);
+     backdrop-filter: blur(10px);
+
 }
 
 .clock-base:before {
@@ -33,7 +34,7 @@ body{
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(-45deg, #ff3d00 0%, #0400ff 100% );
+    background: linear-gradient(-45deg, #ff3d00 0%, #0400ff 100%);
     transform: translate3d(0px, 0px, 0) scale(0.95);
     filter: blur(50px);
     opacity: var(0.7);
@@ -52,56 +53,65 @@ body{
     background: inherit;
     border-radius: inherit;
 }
-        
 
-.clock{
+
+.clock {
     font-size: 7rem;
     font-weight: 700;
     letter-spacing: 10px;
-    
+
     /* color: rgb(255, 255, 255); */
     background: linear-gradient(90deg, #eb6047 0%, #90dcff 70%, #9099ff 100%);
-color: transparent;
--webkit-background-clip: text;
-background-clip: text;
--webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
-.date{
+
+.date {
     color: rgb(169, 169, 169);
     font-size: 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 @media (max-width:900px) {
-    body{
+    body {
         gap: 30px;
     }
-    .clock-base{
-         padding: 2.3rem 4rem;
-          box-shadow: 0 20px 30px rgba(245, 245, 245, 0.5);
-    backdrop-filter: blur(10px);
+
+    .clock-base {
+        padding: 2.3rem 4rem;
+        box-shadow: 0 20px 30px rgba(245, 245, 245, 0.5);
+     
     }
-    .clock{
+
+    .clock {
         font-size: 4rem;
     }
-    .date{
+
+    .date {
         font-size: 1.5rem;
     }
 }
+
 @media (max-width:600px) {
-    body{
+    body {
         gap: 18px;
     }
-    .clock-base{
-         padding: 1.4rem 2rem;
-          box-shadow: 0 8px 20px rgba(245, 245, 245, 0.5);
-    backdrop-filter: blur(10px);
-   
+
+    .clock-base {
+        padding: 1.4rem 2rem;
+        box-shadow: 0 8px 20px rgba(245, 245, 245, 0.5);
+       
+
     }
-    .clock{
+
+    .clock {
         font-size: 1.5rem;
     }
-    .date{
+
+    .date {
         font-size: 1rem;
     }
 }
